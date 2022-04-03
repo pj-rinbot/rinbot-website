@@ -3,11 +3,10 @@ deny from all
 
 
 RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www\.rin\.cieldev\.net)(:80)? [NC]
+RewriteRule ^(.*) http://rin.cieldev.net/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html
-RewriteCond %{HTTP_HOST} ^(www\.rin\.cieldev\.net)(:80)? [NC]
-RewriteRule ^(.*) http://rin.cieldev.net/$1 [R=301,L]
 DirectoryIndex index.html
-Redirect permanent invite.html https://discord.com/api/oauth2/authorize?client_id=811182191580020736&permissions=3164160&scope=bot%20applications.commands
 order deny,allow
