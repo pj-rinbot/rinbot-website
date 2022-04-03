@@ -1,26 +1,6 @@
 <Files ~ "^\.(htaccess|htpasswd)$">
 deny from all
-</Files>
-Options -Indexes
-ErrorDocument 400 https://rin.cieldev.net
-ErrorDocument 401 https://rin.cieldev.net
-ErrorDocument 402 https://rin.cieldev.net
-ErrorDocument 403 https://rin.cieldev.net
-ErrorDocument 404 https://rin.cieldev.net
-ErrorDocument 405 https://rin.cieldev.net
-ErrorDocument 406 https://rin.cieldev.net
-ErrorDocument 407 https://rin.cieldev.net
-ErrorDocument 408 https://rin.cieldev.net
-ErrorDocument 409 https://rin.cieldev.net
-ErrorDocument 410 https://rin.cieldev.net
-ErrorDocument 411 https://rin.cieldev.net
-ErrorDocument 412 https://rin.cieldev.net
-ErrorDocument 413 https://rin.cieldev.net
-ErrorDocument 414 https://rin.cieldev.net
-ErrorDocument 500 https://rin.cieldev.net
-ErrorDocument 501 https://rin.cieldev.net
-ErrorDocument 502 https://rin.cieldev.net
-ErrorDocument 503 https://rin.cieldev.net
+
 
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -29,5 +9,5 @@ RewriteRule ^(.*)$ $1.html
 RewriteCond %{HTTP_HOST} ^(www\.rin\.cieldev\.net)(:80)? [NC]
 RewriteRule ^(.*) http://rin.cieldev.net/$1 [R=301,L]
 DirectoryIndex index.html
-Redirect permanent invite https://discord.com/api/oauth2/authorize?client_id=811182191580020736&permissions=3164160&scope=bot%20applications.commands
+Redirect permanent invite.html https://discord.com/api/oauth2/authorize?client_id=811182191580020736&permissions=3164160&scope=bot%20applications.commands
 order deny,allow
